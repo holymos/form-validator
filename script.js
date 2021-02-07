@@ -70,14 +70,6 @@ function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Event Listener
-// form.addEventListener("keyup", (e) => {
-//     checkLength(username, 3, 15);
-//     checkEmail(email);
-//     checkPassword(password);
-//     checkPasswordMatch(password, password2);
-// });
-
 let timer,
     timeoutVal = 800; // time it takes to wait for user to stop typing in ms
 
@@ -115,4 +107,12 @@ password2.addEventListener('keyup', () => {
   timer = window.setTimeout(() => {
       checkPasswordMatch(password, password2)
   }, timeoutVal)
+});
+
+// Submit check
+form.addEventListener("submit", (e) => {
+    checkLength(username, 3, 15);
+    checkEmail(email);
+    checkPassword(password);
+    checkPasswordMatch(password, password2);
 });
