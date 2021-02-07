@@ -111,6 +111,8 @@ password2.addEventListener('keyup', () => {
 
 // Submit check
 form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     checkLength(username, 3, 15);
     checkEmail(email);
     checkPassword(password);

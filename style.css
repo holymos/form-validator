@@ -54,8 +54,9 @@ h2 {
   color: #777;
   transition: all 0.2s;
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   position: relative;
+  transition: all 0.3s;
 }
 
 .form-control i {
@@ -78,6 +79,7 @@ h2 {
 .form-control input:focus {
   outline: 0;
   border-color: #bbb;
+  font-size: 13px;
 }
 
 .form-control.success input {
