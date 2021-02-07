@@ -41,14 +41,15 @@ function checkLength (input, min, max) {
 }
 
 //Check if valid password
-function checkPassword(input, min, max) {
+function checkPassword(input) {
+    const mediumRegex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$");
+    console.log(mediumRegex);
+
     if(input.value.trim() === "") {
         showError(input, `${getFieldName(input)} is required`);
-    } else if (input.value.length < min) {
-        showError(input, `${getFieldName(input)} must be at least ${min} characters`)
-    } else if (input.value.length > max) {
-            showError(input, `${getFieldName(input)} must be less than ${max} characters`)
-      } else {
+    } else if (!input.value.match(mediumRegex)) {
+        showError(input, "Invalid password")
+    } else {
         showSuccess(input);
     }
 }
